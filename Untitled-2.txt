@@ -1,0 +1,45 @@
+
+class Yacht
+{
+private:
+    Kadlub kadlub;
+    Zagiel zagiel;
+    Zaloga zaloga;
+    static int yachtCount;
+public:
+    static int GetYachtCount()
+    {
+        return yachtCount;        
+    }
+    void AddNewElement(YachtElement element)
+    {
+        elements[elementCount] = element;
+        elementCount++;
+    }
+    
+    // Yacht(Yacht* yacht){
+    //     this->kadlub = yacht->kadlub;
+    //     yachtCount++
+    // }
+
+    Yacht(/* args */)
+    {
+        yachtCount++;
+        // elements = new YachtElement[];
+    };
+    ~Yacht(){
+    //   delete elements;  
+    };
+};
+
+Yacht::Yacht(int yachtNumber, string name, string color)
+{
+    DEBUG_MSG("YACHT CREATED " + yachtNumber);
+}
+
+Yacht::~Yacht()
+{
+    #ifdef _DEBUG
+        cout<<"YACHT CREATED";
+    #endif
+}
