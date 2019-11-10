@@ -23,7 +23,7 @@ void testingFunction()
 
 	Crew crew1("John", 5);
 	Crew crew2 = crew1;
-	std::cout << crew2.getCaptainName() << '\n';
+	std::cout << "crew2 captain's name: " << crew2.getCaptainName() << '\n';
 
 	//YACHT TEST
 
@@ -34,8 +34,8 @@ void testingFunction()
 	Crew crew4 = yacht1.getCrew();
 	Sails sail5 = yacht1.getSails();
 	Yacht yacht2(hull2);
-	Yacht yacht3 = yacht1;
-	std::cout << Yacht::getYachtCount() << '\n';
+	Yacht yacht3 = yacht2;
+	std::cout << "number of yachts created: " << Yacht::getYachtCount() << '\n';
 
 }
 
@@ -50,18 +50,25 @@ void operatorTest()
 	bool c = hull1 == hull2;
 	bool d = hull1 != hull2;
 	std::cout << hull2[3] << '\n';
+	std::cout << "hull1 > hull2: " << a << " (expected:  false)\n";
+	std::cout << "hull1 < hull2: " << b << " (expected:  false)\n";
+	std::cout << "hull1 == hull2: " << c << " (expected:  false)\n";
+	std::cout << "hull1 != hull2: " << d << " (expected:  true)\n";
 
 	//SAILS OPERATORS
 	Sails sail1(1, 1);
 	Sails sail2(2, 2);
 	Sails sail3;
 	Sails sail4;
-	
+
 	sail3 = sail1 - sail2;
 	sail4 = sail1 + sail2;
 	bool e = sail2 > sail1;
 	bool f = sail1 < sail2;
-	double g = double(sail1);
+	double g = double(sail2);
+	std::cout << "sail2 > sail1: " << e << " (expected:  true)\n";
+	std::cout << "sail1 < sail2: " << f << " (expected:  true)\n";
+	std::cout << "double(sail2): " << g << " (expected:  4)\n";
 
 	//CREW OPERATORS
 	Crew crew1("John", 5);
@@ -79,7 +86,9 @@ void operatorTest()
 int main()
 {
 	testingFunction();
-	DEBUG_OPERATOR_TEST
+#ifdef _DEBUG
+	operatorTest();
+#endif
 
 	return 0;
 }

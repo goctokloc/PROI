@@ -3,7 +3,7 @@
 
 Crew::Crew()
 {
-	//captainName = new std::string();
+	captainName = new std::string();
 	DEBUG_MSG("CREW CREATED!\n");
 }
 

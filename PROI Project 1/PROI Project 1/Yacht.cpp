@@ -8,7 +8,7 @@ Yacht::Yacht(Hull newHull)
 {
 	yachtCount++;
 	hull = newHull;
-	//crew = new Crew;
+	crew = new Crew;
 	sails = Sails(10.5, 16.5);
 	DEBUG_MSG("YACHT CREATED!\n");
 }
