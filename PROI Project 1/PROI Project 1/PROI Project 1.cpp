@@ -5,7 +5,7 @@
 #include "Sails.h"
 #include "Macros.h"
 
-int Yacht::yachtCount = 0;
+
 
 void testingFunction()
 {
@@ -51,7 +51,7 @@ void operatorTest()
 	bool d = hull1 != hull2;
 	std::cout << hull2[3] << '\n';
 	std::cout << "hull1 > hull2: " << a << " (expected:  false)\n";
-	std::cout << "hull1 < hull2: " << b << " (expected:  false)\n";
+	std::cout << "hull1 < hull2: " << b << " (expected:  true)\n";
 	std::cout << "hull1 == hull2: " << c << " (expected:  false)\n";
 	std::cout << "hull1 != hull2: " << d << " (expected:  true)\n";
 
@@ -63,10 +63,10 @@ void operatorTest()
 
 	sail3 = sail1 - sail2;
 	sail4 = sail1 + sail2;
-	bool e = sail2 > sail1;
+	bool e = sail1 > sail2;
 	bool f = sail1 < sail2;
 	double g = double(sail2);
-	std::cout << "sail2 > sail1: " << e << " (expected:  true)\n";
+	std::cout << "sail1 > sail2: " << e << " (expected:  false)\n";
 	std::cout << "sail1 < sail2: " << f << " (expected:  true)\n";
 	std::cout << "double(sail2): " << g << " (expected:  4)\n";
 

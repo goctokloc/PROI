@@ -1,7 +1,7 @@
 #include "Yacht.h"
 #include "Macros.h"
 
-
+int Yacht::yachtCount = 0;
 
 
 Yacht::Yacht(Hull newHull)

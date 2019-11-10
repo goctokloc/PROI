@@ -23,12 +23,12 @@ Hull::~Hull()
 
 bool operator > (const Hull& s1, const Hull& s2)
 {
-	return s1.lengthOverall > s1.lengthOverall;
+	return s1.lengthOverall > s2.lengthOverall;
 }
 
 bool operator < (const Hull& s1, const Hull& s2)
 {
-	return s1.lengthOverall < s1.lengthOverall;
+	return s1.lengthOverall < s2.lengthOverall;
 }
 
 bool operator == (const Hull& h1, const Hull& h2)

@@ -24,7 +24,7 @@ double Sails::getArea()
 	return area;
 }
 
-Sails Sails::operator+(const Sails& param)
+Sails Sails::operator +(const Sails& param)
 {
 	Sails temp;
 	temp.length = length + param.length;
