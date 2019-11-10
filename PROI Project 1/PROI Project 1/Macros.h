@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 #ifdef _DEBUG
 #define DEBUG_MSG(x) std::cout << x;
 #else

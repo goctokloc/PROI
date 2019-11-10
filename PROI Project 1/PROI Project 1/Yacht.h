@@ -5,12 +5,20 @@
 class Yacht
 {
 public:
-	Yacht();
+	Yacht(Hull newHull);
 	~Yacht();
+	static int getYachtCount();
+	void setCrew(Crew newCrew);
+	void setSails(Sails newSails);
+	Hull getHull();
+	Crew getCrew();
+	Sails getSails();
+	Yacht& operator= (const Yacht& y1);
 
 private:
 	Hull hull;
-	Crew crew;
+	Crew* crew;
 	Sails sails;
+	static int yachtCount;
 
 };
