@@ -6,11 +6,22 @@
 
 Yacht::Yacht(Hull newHull)
 {
-	hull = newHull;
-	crew = new Crew();
-	sails = Sails(10.5, 16.5);
 	yachtCount++;
+	hull = newHull;
+	//crew = new Crew;
+	sails = Sails(10.5, 16.5);
 	DEBUG_MSG("YACHT CREATED!\n");
+}
+
+Yacht::Yacht(const Yacht& y1)
+{
+	yachtCount++;
+	sails = y1.sails;
+	hull = y1.hull;
+	delete crew;
+	crew = new Crew;
+	*crew = *(y1.crew);
+	
 }
 
 Yacht::~Yacht()
@@ -27,8 +38,9 @@ int Yacht::getYachtCount()
 
 void Yacht::setCrew(Crew newCrew)
 {
-	crew->captainName = newCrew.captainName;
-	crew->sailors = newCrew.sailors;
+	delete crew;
+	crew = new Crew;
+	*crew = newCrew;
 }
 
 void Yacht::setSails(Sails newSails)
@@ -43,7 +55,10 @@ Hull Yacht::getHull()
 
 Crew Yacht::getCrew()
 {
-	return *crew;
+	Crew temp;
+	temp.sailors = crew->sailors;
+	temp.captainName = new std::string(*(crew->captainName));
+	return temp;
 }
 
 Sails Yacht::getSails()
@@ -51,13 +66,13 @@ Sails Yacht::getSails()
 	return sails;
 }
 
-Yacht& Yacht::operator= (const Yacht& y1)
+Yacht& Yacht::operator = (const Yacht& y1)
 {
 	sails = y1.sails;
 	hull = y1.hull;
-	Crew temp;
-	temp = *(y1.crew);
-	*crew = temp;
+	delete crew;
+	crew = new Crew;
+	*crew = *(y1.crew);
 	return *this;
 }
 

@@ -6,6 +6,7 @@ class Yacht
 {
 public:
 	Yacht(Hull newHull);
+	Yacht(const Yacht& y1);
 	~Yacht();
 	static int getYachtCount();
 	void setCrew(Crew newCrew);
@@ -13,7 +14,7 @@ public:
 	Hull getHull();
 	Crew getCrew();
 	Sails getSails();
-	Yacht& operator= (const Yacht& y1);
+	Yacht& operator = (const Yacht& y1);
 
 private:
 	Hull hull;
