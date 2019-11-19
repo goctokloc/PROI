@@ -6,7 +6,6 @@
 #include "Macros.h"
 
 
-
 void testingFunction()
 {
 	//HULL TEST
@@ -36,7 +35,6 @@ void testingFunction()
 	Yacht yacht2(hull2);
 	Yacht yacht3 = yacht2;
 	std::cout << "number of yachts created: " << Yacht::getYachtCount() << '\n';
-
 }
 
 void operatorTest()
@@ -85,13 +83,12 @@ void operatorTest()
 
 int main()
 {
-	testingFunction();
+	for (int i = 0; i < 1000; i++)
+	{
+		testingFunction();
 #ifdef _DEBUG
-	operatorTest();
+		operatorTest();
 #endif
-
+	}
 	return 0;
 }
-
-
-

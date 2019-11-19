@@ -21,7 +21,6 @@ Yacht::Yacht(const Yacht& y1)
 	delete crew;
 	crew = new Crew;
 	*crew = *(y1.crew);
-	
 }
 
 Yacht::~Yacht()
@@ -55,10 +54,7 @@ Hull Yacht::getHull()
 
 Crew Yacht::getCrew()
 {
-	Crew temp;
-	temp.sailors = crew->sailors;
-	temp.captainName = new std::string(*(crew->captainName));
-	return temp;
+	return *this->crew;
 }
 
 Sails Yacht::getSails()
@@ -66,7 +62,7 @@ Sails Yacht::getSails()
 	return sails;
 }
 
-Yacht& Yacht::operator = (const Yacht& y1)
+Yacht& Yacht::operator =(const Yacht& y1)
 {
 	sails = y1.sails;
 	hull = y1.hull;
@@ -75,4 +71,3 @@ Yacht& Yacht::operator = (const Yacht& y1)
 	*crew = *(y1.crew);
 	return *this;
 }
-

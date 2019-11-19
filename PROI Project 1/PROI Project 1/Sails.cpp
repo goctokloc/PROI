@@ -33,7 +33,7 @@ Sails Sails::operator +(const Sails& param)
 	return temp;
 }
 
-Sails Sails::operator - (const Sails& param)
+Sails Sails::operator -(const Sails& param)
 {
 	Sails temp;
 	temp.length = length - param.length;
@@ -49,12 +49,12 @@ Sails Sails::operator - (const Sails& param)
 	return temp;
 }
 
-bool operator > (const Sails& s1, const Sails& s2)
+bool operator >(const Sails& s1, const Sails& s2)
 {
 	return s1.area > s2.area;
 }
 
-bool operator < (const Sails& s1, const Sails& s2)
+bool operator <(const Sails& s1, const Sails& s2)
 {
 	return s1.area < s2.area;
 }
